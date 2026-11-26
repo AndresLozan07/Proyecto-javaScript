@@ -4,7 +4,7 @@
         "id": "EX001",
         "codigo": "EX001",
         "titulo": "Examen de JavaScript",
-        "tiempo": 1,
+        "tiempo": 30,
         "porcentajeAprobacion": 70,
         "descripcion": "Evaluación básica de JavaScript",
         "activo": true,
