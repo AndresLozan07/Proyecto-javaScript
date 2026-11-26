@@ -1,0 +1,388 @@
+/* ===== Colores y estilo general de Acme School ===== */
+:root {
+    --azul: #1e3a8a;
+    --azul-claro: #2563eb;
+    --azul-fondo: #eff6ff;
+    --rojo: #dc2626;
+    --rojo-oscuro: #b91c1c;
+    --verde: #15803d;
+    --verde-fondo: #dcfce7;
+    --rojo-fondo: #fee2e2;
+    --gris-fondo: #f3f4f6;
+    --gris-borde: #d1d5db;
+    --texto: #1f2937;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+[hidden] {
+    display: none !important;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    color: var(--texto);
+    background-color: var(--gris-fondo);
+    line-height: 1.5;
+}
+
+/* ===== Encabezado de las páginas públicas ===== */
+.encabezado {
+    background-color: var(--azul);
+    color: white;
+    padding: 20px;
+}
+
+.encabezado h1,
+.encabezado p {
+    margin: 0;
+}
+
+main {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+h2 {
+    color: var(--azul);
+}
+
+/* ===== Secciones tipo tarjeta ===== */
+section,
+.tarjeta {
+    background-color: white;
+    border: 1px solid var(--gris-borde);
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+section h3 {
+    margin-top: 0;
+    color: var(--azul);
+}
+
+/* ===== Formularios ===== */
+label {
+    display: block;
+    margin-top: 12px;
+    font-weight: bold;
+}
+
+input[type="text"],
+input[type="number"],
+input[type="email"],
+input[type="tel"],
+input[type="password"],
+select,
+textarea {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid var(--gris-borde);
+    border-radius: 5px;
+    font-size: 1rem;
+    font-family: inherit;
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+textarea {
+    min-height: 80px;
+    resize: vertical;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+    outline: none;
+    border-color: var(--azul-claro);
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.25);
+}
+
+.fila-respuesta {
+    display: flex;
+    gap: 10px;
+    align-items: flex-end;
+}
+
+.fila-respuesta .campo {
+    flex: 1;
+}
+
+.fila-respuesta .correcta-opcion {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding-bottom: 10px;
+    font-weight: normal;
+    white-space: nowrap;
+}
+
+/* ===== Botones ===== */
+.boton,
+button {
+    display: inline-block;
+    padding: 10px 16px;
+    margin: 12px 8px 0 0;
+    border: none;
+    border-radius: 5px;
+    background-color: var(--azul-claro);
+    color: white;
+    font-size: 1rem;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background-color 0.2s, transform 0.1s;
+}
+
+.boton:hover,
+button:hover {
+    background-color: var(--azul);
+}
+
+.boton:active,
+button:active {
+    transform: scale(0.97);
+}
+
+.boton:focus-visible,
+button:focus-visible,
+a:focus-visible {
+    outline: 3px solid #f59e0b;
+    outline-offset: 2px;
+}
+
+.boton-secundario {
+    background-color: #6b7280;
+}
+
+.boton-secundario:hover {
+    background-color: #4b5563;
+}
+
+.boton-peligro {
+    background-color: var(--rojo);
+}
+
+.boton-peligro:hover {
+    background-color: var(--rojo-oscuro);
+}
+
+/* ===== Mensajes ===== */
+.mensaje {
+    margin: 0 0 15px;
+}
+
+.mensaje.exito,
+.mensaje.error {
+    padding: 12px 15px;
+    border-radius: 5px;
+    animation: aparecer 0.3s ease;
+}
+
+.mensaje.exito {
+    background-color: var(--verde-fondo);
+    color: var(--verde);
+}
+
+.mensaje.error {
+    background-color: var(--rojo-fondo);
+    color: var(--rojo-oscuro);
+}
+
+.vacio {
+    padding: 15px;
+    background-color: var(--gris-fondo);
+    border-radius: 5px;
+}
+
+/* ===== Login ===== */
+.pagina-login {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    background-color: var(--azul);
+}
+
+.login {
+    width: 100%;
+    max-width: 400px;
+    background-color: white;
+    border-radius: 10px;
+    padding: 30px;
+    animation: aparecer 0.5s ease;
+}
+
+.login h1 {
+    margin-top: 0;
+    color: var(--azul);
+    text-align: center;
+}
+
+.login button {
+    width: 100%;
+    margin: 20px 0 0;
+}
+
+.ayuda-login {
+    font-size: 0.85rem;
+    color: #6b7280;
+    text-align: center;
+}
+
+/* ===== Lista de exámenes (módulo público) ===== */
+.lista-tarjetas {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 20px;
+}
+
+.tarjeta {
+    margin-bottom: 0;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.tarjeta:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 6px 14px rgba(0, 0, 0, 0.12);
+}
+
+.tarjeta h3 {
+    margin-top: 0;
+    color: var(--azul);
+}
+
+.tarjeta p {
+    margin: 6px 0;
+}
+
+/* ===== Preguntas en la gestión de exámenes ===== */
+.pregunta-item {
+    border: 1px solid var(--gris-borde);
+    border-radius: 8px;
+    padding: 15px;
+    margin-bottom: 15px;
+}
+
+.pregunta-item h4 {
+    margin: 0 0 10px;
+}
+
+.pregunta-item li.correcta {
+    color: var(--verde);
+    font-weight: bold;
+}
+
+/* ===== Realizar examen ===== */
+.encabezado-examen {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+    background-color: var(--azul);
+    color: white;
+    padding: 15px 20px;
+}
+
+.encabezado-examen h1 {
+    margin: 0 0 5px;
+    font-size: 1.5rem;
+}
+
+.encabezado-examen p {
+    margin: 2px 0;
+}
+
+.caja-reloj {
+    text-align: center;
+}
+
+.caja-reloj span {
+    display: block;
+    font-size: 0.9rem;
+}
+
+#reloj {
+    display: block;
+    font-size: 2rem;
+    font-weight: bold;
+    font-variant-numeric: tabular-nums;
+    transition: color 0.3s;
+}
+
+#reloj.poco-tiempo {
+    color: #fca5a5;
+    animation: parpadeo 1s infinite;
+}
+
+/* ===== Resultado ===== */
+.resultado {
+    padding: 20px;
+    border-radius: 8px;
+    font-size: 1.4rem;
+    font-weight: bold;
+    text-align: center;
+    animation: aparecer 0.5s ease;
+}
+
+.resultado.aprobado {
+    background-color: var(--verde-fondo);
+    color: var(--verde);
+}
+
+.resultado.reprobado {
+    background-color: var(--rojo-fondo);
+    color: var(--rojo-oscuro);
+}
+
+/* ===== Animaciones ===== */
+@keyframes aparecer {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes parpadeo {
+    50% {
+        opacity: 0.5;
+    }
+}
+
+/* Respeta a quien desactiva las animaciones en su sistema */
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation: none !important;
+        transition: none !important;
+    }
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 600px) {
+    main {
+        padding: 12px;
+    }
+
+    .fila-respuesta {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .fila-respuesta .correcta-opcion {
+        padding-bottom: 0;
+    }
+
