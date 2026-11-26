@@ -1,0 +1,12 @@
+
+[
+    {
+        "id": "USR001",
+        "identificacion": "1001234567",
+        "nombre": "Administrador Principal",
+        "email": "admin@acmeschool.com",
+        "telefono": "3001234567",
+        "cargo": "Administrativo",
+        "contrasena": "Admin123"
+    }
+]
