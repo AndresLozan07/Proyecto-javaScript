@@ -1,0 +1,151 @@
+
+[
+    {
+        "id": "EX001",
+        "codigo": "EX001",
+        "titulo": "Examen de JavaScript",
+        "tiempo": 1,
+        "porcentajeAprobacion": 70,
+        "descripcion": "Evaluación básica de JavaScript",
+        "activo": true,
+        "preguntas": [
+            {
+                "id": "P001",
+                "descripcion": "¿Qué palabra se utiliza para declarar una variable?",
+                "respuestas": [
+                    {
+                        "id": "R001",
+                        "descripcion": "let",
+                        "correcta": true
+                    },
+                    {
+                        "id": "R002",
+                        "descripcion": "print",
+                        "correcta": false
+                    },
+                    {
+                        "id": "R003",
+                        "descripcion": "input",
+                        "correcta": false
+                    }
+                ]
+            },
+            {
+                "id": "P002",
+                "descripcion": "¿Qué método convierte un JSON en un objeto JavaScript?",
+                "respuestas": [
+                    {
+                        "id": "R004",
+                        "descripcion": "JSON.stringify()",
+                        "correcta": false
+                    },
+                    {
+                        "id": "R005",
+                        "descripcion": "JSON.parse()",
+                        "correcta": true
+                    },
+                    {
+                        "id": "R006",
+                        "descripcion": "JSON.convert()",
+                        "correcta": false
+                    }
+                ]
+            },
+            {
+                "id": "P003",
+                "descripcion": "¿Qué estructura permite recorrer un arreglo?",
+                "respuestas": [
+                    {
+                        "id": "R007",
+                        "descripcion": "for",
+                        "correcta": true
+                    },
+                    {
+                        "id": "R008",
+                        "descripcion": "if",
+                        "correcta": false
+                    },
+                    {
+                        "id": "R009",
+                        "descripcion": "switch",
+                        "correcta": false
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "id": "EX002",
+        "codigo": "EX002",
+        "titulo": "Examen de fundamentos de programación",
+        "tiempo": 30,
+        "porcentajeAprobacion": 70,
+        "descripcion": "Evaluación de fundamentos de programación",
+        "activo": true,
+        "preguntas": [
+            {
+                "id": "P004",
+                "descripcion": "¿Qué significa HTML?",
+                "respuestas": [
+                    {
+                        "id": "R010",
+                        "descripcion": "HyperText Markup Language",
+                        "correcta": true
+                    },
+                    {
+                        "id": "R011",
+                        "descripcion": "HighText Machine Language",
+                        "correcta": false
+                    },
+                    {
+                        "id": "R012",
+                        "descripcion": "Home Tool Markup Language",
+                        "correcta": false
+                    }
+                ]
+            },
+            {
+                "id": "P005",
+                "descripcion": "¿Qué lenguaje se utiliza para dar estilos a una página web?",
+                "respuestas": [
+                    {
+                        "id": "R013",
+                        "descripcion": "JavaScript",
+                        "correcta": false
+                    },
+                    {
+                        "id": "R014",
+                        "descripcion": "CSS",
+                        "correcta": true
+                    },
+                    {
+                        "id": "R015",
+                        "descripcion": "Python",
+                        "correcta": false
+                    }
+                ]
+            },
+            {
+                "id": "P006",
+                "descripcion": "¿Qué estructura permite tomar decisiones?",
+                "respuestas": [
+                    {
+                        "id": "R016",
+                        "descripcion": "for",
+                        "correcta": false
+                    },
+                    {
+                        "id": "R017",
+                        "descripcion": "while",
+                        "correcta": false
+                    },
+                    {
+                        "id": "R018",
+                        "descripcion": "if",
+                        "correcta": true
+                    }
+                ]
+            }
+        ]
+    }
+]
