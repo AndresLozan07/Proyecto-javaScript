@@ -30,6 +30,13 @@ class AcmePregunta extends HTMLElement {
         return this._numero;
     }
 
+    // Devuelve el id de la respuesta marcada (o null si no marcó ninguna)
+    get respuestaSeleccionada() {
+        const marcada = this.shadowRoot.querySelector("input:checked");
+
+        return marcada ? marcada.value : null;
+    }
+
     mostrarPregunta() {
         if (!this._pregunta) {
             return;
