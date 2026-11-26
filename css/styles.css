@@ -386,3 +386,8 @@ a:focus-visible {
         padding-bottom: 0;
     }
 
+    .encabezado-examen {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}
