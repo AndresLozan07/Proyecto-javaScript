@@ -1,74 +1,32 @@
-
 <!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Resolver examen - Acme School</title>
+    <link rel="stylesheet" href="../css/styles.css">
 </head>
 <body>
 
-    <header>
-        <h1>Examen de programación</h1>
+    <header class="encabezado-examen">
+        <div>
+            <h1 id="tituloExamen">Cargando examen...</h1>
+            <p>Estudiante: <span id="nombreEstudiante"></span></p>
+            <p>Total de preguntas: <span id="totalPreguntas"></span></p>
+            <p>Porcentaje para aprobar: <span id="porcentajeAprobacion"></span></p>
+        </div>
 
-        <p>Total de preguntas: 3</p>
-        <p>Porcentaje para aprobar: 70%</p>
-
-        <h2>Tiempo restante</h2>
-        <p id="reloj">30:00</p>
+        <div class="caja-reloj">
+            <span>Tiempo restante</span>
+            <strong id="reloj" role="timer">--:--</strong>
+        </div>
     </header>
 
     <main>
 
-        <form action="resultado-examen.html" method="get">
+        <form id="formExamen">
 
-            <section>
-                <h3>Pregunta 1</h3>
-
-                <p>¿Qué lenguaje se utiliza para desarrollar páginas web?</p>
-
-                <input type="radio" id="p1r1" name="pregunta1" value="HTML">
-                <label for="p1r1">HTML</label><br>
-
-                <input type="radio" id="p1r2" name="pregunta1" value="Python">
-                <label for="p1r2">Python</label><br>
-
-                <input type="radio" id="p1r3" name="pregunta1" value="Java">
-                <label for="p1r3">Java</label><br>
-
-            </section>
-
-            <section>
-                <h3>Pregunta 2</h3>
-
-                <p>¿Qué significa CSS?</p>
-
-                <input type="radio" id="p2r1" name="pregunta2" value="Cascading Style Sheets">
-                <label for="p2r1">Cascading Style Sheets</label><br>
-
-                <input type="radio" id="p2r2" name="pregunta2" value="Computer Style System">
-                <label for="p2r2">Computer Style System</label><br>
-
-                <input type="radio" id="p2r3" name="pregunta2" value="Creative System Software">
-                <label for="p2r3">Creative System Software</label><br>
-
-            </section>
-
-            <section>
-                <h3>Pregunta 3</h3>
-
-                <p>¿Qué etiqueta se utiliza para crear un enlace en HTML?</p>
-
-                <input type="radio" id="p3r1" name="pregunta3" value="img">
-                <label for="p3r1">img</label><br>
-
-                <input type="radio" id="p3r2" name="pregunta3" value="a">
-                <label for="p3r2">a</label><br>
-
-                <input type="radio" id="p3r3" name="pregunta3" value="p">
-                <label for="p3r3">p</label><br>
-
-            </section>
+            <div id="preguntas"></div>
 
             <button type="submit">Terminar examen</button>
 
@@ -76,5 +34,6 @@
 
     </main>
 
+    <script type="module" src="../js/realizar-examen.js"></script>
 </body>
 </html>

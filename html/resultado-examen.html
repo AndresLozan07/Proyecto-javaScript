@@ -4,10 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Resultado del examen - Acme School</title>
+    <link rel="stylesheet" href="../css/styles.css">
 </head>
 <body>
 
-    <header>
+    <header class="encabezado">
         <h1>Acme School</h1>
     </header>
 
@@ -16,31 +17,27 @@
         <h2>Resultado del examen</h2>
 
         <section>
-
             <h3>Información del estudiante</h3>
 
-            <p>Nombre: Estudiante</p>
-            <p>Identificación: 123456</p>
-
+            <p>Nombre: <strong id="nombreEstudiante"></strong></p>
+            <p>Identificación: <strong id="idEstudiante"></strong></p>
+            <p>Examen: <strong id="tituloExamen"></strong></p>
         </section>
 
         <section>
-
             <h3>Resultados obtenidos</h3>
 
-            <p>Respuestas correctas: 2 de 3</p>
+            <p>Respuestas correctas: <strong id="correctas"></strong></p>
+            <p>Porcentaje obtenido: <strong id="porcentaje"></strong></p>
+            <p>Porcentaje necesario para aprobar: <strong id="necesario"></strong></p>
 
-            <p>Porcentaje obtenido: 66.67%</p>
-
-            <p>Porcentaje necesario para aprobar: 70%</p>
-
-            <h3>No aprobaste el examen</h3>
-
+            <p id="mensajeResultado" class="resultado" role="status"></p>
         </section>
 
-        <a href="resolver-examenes.html">Volver a los exámenes</a>
+        <a class="boton" href="resolver-examenes.html">Volver a los exámenes</a>
 
     </main>
 
+    <script type="module" src="../js/resultado-examen.js"></script>
 </body>
 </html>

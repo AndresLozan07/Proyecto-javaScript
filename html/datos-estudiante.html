@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Datos del estudiante - Acme School</title>
+    <link rel="stylesheet" href="../css/styles.css">
+</head>
+<body>
+
+    <header class="encabezado">
+        <h1>Acme School</h1>
+    </header>
+
+    <main>
+
+        <h2>Identificación del estudiante</h2>
+
+        <p>Examen: <strong id="nombreExamen"></strong></p>
+        <p>Ingresa tus datos para comenzar el examen. El tiempo empezará a correr al continuar.</p>
+
+        <section>
+            <form id="formEstudiante" novalidate>
+
+                <label for="identificacion">Número de identificación</label>
+                <input type="number" id="identificacion" name="identificacion" required>
+
+                <label for="nombre">Nombre completo</label>
+                <input type="text" id="nombre" name="nombre" required>
+
+                <p id="mensaje" class="mensaje" role="alert"></p>
+
+                <button type="submit">Comenzar examen</button>
+                <a class="boton boton-secundario" href="resolver-examenes.html">Volver</a>
+
+            </form>
+        </section>
+
+    </main>
+
+    <script type="module" src="../js/datos-estudiante.js"></script>
+</body>
+</html>

@@ -4,81 +4,42 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gestión de exámenes - Acme School</title>
+    <link rel="stylesheet" href="../css/styles.css">
 </head>
 <body>
 
-    <header>
-        <h1>Acme School</h1>
-
-        <nav>
-            <a href="usuarios.html">Usuarios</a>
-            <a href="examenes.html">Exámenes</a>
-            <a href="resolver-examenes.html">Resolver exámenes</a>
-            <a href="index.html">Cerrar sesión</a>
-        </nav>
-    </header>
+    <acme-header></acme-header>
 
     <main>
 
         <h2>Gestión de exámenes</h2>
 
-        <section>
-            <h3>Crear examen</h3>
-
-            <form>
-
-                <label for="codigo">Código</label><br>
-                <input type="text" id="codigo" name="codigo" required><br><br>
-
-                <label for="titulo">Título del examen</label><br>
-                <input type="text" id="titulo" name="titulo" required><br><br>
-
-                <label for="tiempo">Tiempo (minutos)</label><br>
-                <input type="number" id="tiempo" name="tiempo" min="1" required><br><br>
-
-                <label for="porcentaje">Porcentaje de aprobación</label><br>
-                <input type="number" id="porcentaje" name="porcentaje" min="0" max="100" required><br><br>
-
-                <label for="descripcion">Descripción del examen</label><br>
-                <textarea id="descripcion" name="descripcion" required></textarea><br><br>
-
-                <button type="submit">Guardar examen</button>
-                <button type="reset">Limpiar formulario</button>
-
-            </form>
-        </section>
+        <p id="mensaje" class="mensaje" role="status"></p>
 
         <section>
-            <h3>Preguntas del examen</h3>
+            <h3 id="tituloFormularioExamen">Crear examen</h3>
 
-            <form>
+            <form id="formExamen">
 
-                <label for="pregunta">Descripción de la pregunta</label><br>
-                <textarea id="pregunta" name="pregunta" required></textarea><br><br>
+                <input type="hidden" id="examenId">
 
-                <h4>Respuestas</h4>
+                <label for="codigo">Código</label>
+                <input type="text" id="codigo" name="codigo" required>
 
-                <label for="respuesta1">Respuesta 1</label><br>
-                <input type="text" id="respuesta1" name="respuesta1"><br>
-                <input type="radio" name="correcta" value="respuesta1">
-                <label for="respuesta1">Respuesta correcta</label><br><br>
+                <label for="titulo">Título del examen</label>
+                <input type="text" id="titulo" name="titulo" required>
 
-                <label for="respuesta2">Respuesta 2</label><br>
-                <input type="text" id="respuesta2" name="respuesta2"><br>
-                <input type="radio" name="correcta" value="respuesta2">
-                <label for="respuesta2">Respuesta correcta</label><br><br>
+                <label for="tiempo">Tiempo (minutos)</label>
+                <input type="number" id="tiempo" name="tiempo" min="1" required>
 
-                <label for="respuesta3">Respuesta 3</label><br>
-                <input type="text" id="respuesta3" name="respuesta3"><br>
-                <input type="radio" name="correcta" value="respuesta3">
-                <label for="respuesta3">Respuesta correcta</label><br><br>
+                <label for="porcentaje">Porcentaje de aprobación</label>
+                <input type="number" id="porcentaje" name="porcentaje" min="0" max="100" required>
 
-                <label for="respuesta4">Respuesta 4</label><br>
-                <input type="text" id="respuesta4" name="respuesta4"><br>
-                <input type="radio" name="correcta" value="respuesta4">
-                <label for="respuesta4">Respuesta correcta</label><br><br>
+                <label for="descripcion">Descripción del examen</label>
+                <textarea id="descripcion" name="descripcion" required></textarea>
 
-                <button type="submit">Guardar pregunta</button>
+                <button type="submit" id="botonGuardarExamen">Guardar examen</button>
+                <button type="button" id="botonCancelarExamen" class="boton-secundario" hidden>Cancelar edición</button>
 
             </form>
         </section>
@@ -86,35 +47,72 @@
         <section>
             <h3>Exámenes registrados</h3>
 
-            <table border="1">
+            <tabla-examenes id="tablaExamenes"></tabla-examenes>
+        </section>
 
-                <thead>
-                    <tr>
-                        <th>Código</th>
-                        <th>Título</th>
-                        <th>Tiempo</th>
-                        <th>Aprobación</th>
-                        <th>Acciones</th>
-                    </tr>
-                </thead>
+        <!-- Esta sección aparece al crear o editar un examen -->
+        <section id="seccionPreguntas" hidden>
+            <h3>Preguntas del examen: <span id="nombreExamenActual"></span></h3>
 
-                <tbody>
-                    <tr>
-                        <td>EX001</td>
-                        <td>Examen de programación</td>
-                        <td>30 minutos</td>
-                        <td>70%</td>
-                        <td>
-                            <button type="button">Actualizar</button>
-                            <button type="button">Eliminar</button>
-                        </td>
-                    </tr>
-                </tbody>
+            <div id="listaPreguntas"></div>
 
-            </table>
+            <form id="formPregunta">
+
+                <input type="hidden" id="preguntaId">
+
+                <label for="pregunta">Descripción de la pregunta</label>
+                <textarea id="pregunta" name="pregunta" required></textarea>
+
+                <h4>Respuestas (mínimo 2, marca la correcta)</h4>
+
+                <div class="fila-respuesta">
+                    <div class="campo">
+                        <label for="respuesta1">Respuesta 1</label>
+                        <input type="text" id="respuesta1" name="respuesta1">
+                    </div>
+                    <label class="correcta-opcion">
+                        <input type="radio" name="correcta" value="1"> Correcta
+                    </label>
+                </div>
+
+                <div class="fila-respuesta">
+                    <div class="campo">
+                        <label for="respuesta2">Respuesta 2</label>
+                        <input type="text" id="respuesta2" name="respuesta2">
+                    </div>
+                    <label class="correcta-opcion">
+                        <input type="radio" name="correcta" value="2"> Correcta
+                    </label>
+                </div>
+
+                <div class="fila-respuesta">
+                    <div class="campo">
+                        <label for="respuesta3">Respuesta 3</label>
+                        <input type="text" id="respuesta3" name="respuesta3">
+                    </div>
+                    <label class="correcta-opcion">
+                        <input type="radio" name="correcta" value="3"> Correcta
+                    </label>
+                </div>
+
+                <div class="fila-respuesta">
+                    <div class="campo">
+                        <label for="respuesta4">Respuesta 4</label>
+                        <input type="text" id="respuesta4" name="respuesta4">
+                    </div>
+                    <label class="correcta-opcion">
+                        <input type="radio" name="correcta" value="4"> Correcta
+                    </label>
+                </div>
+
+                <button type="submit" id="botonGuardarPregunta">Guardar pregunta</button>
+                <button type="button" id="botonCancelarPregunta" class="boton-secundario" hidden>Cancelar edición</button>
+
+            </form>
         </section>
 
     </main>
 
+    <script type="module" src="../js/examenes.js"></script>
 </body>
 </html>

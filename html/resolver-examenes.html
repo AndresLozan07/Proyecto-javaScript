@@ -1,14 +1,14 @@
-
 <!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Exámenes disponibles - Acme School</title>
+    <link rel="stylesheet" href="../css/styles.css">
 </head>
 <body>
 
-    <header>
+    <header class="encabezado">
         <h1>Acme School</h1>
         <p>Plataforma de evaluación académica</p>
     </header>
@@ -17,29 +17,12 @@
 
         <h2>Exámenes disponibles</h2>
 
-        <section>
+        <div id="listaExamenes" class="lista-tarjetas"></div>
 
-            <article>
-                <h3>Examen de programación</h3>
-
-                <p>Tiempo: 30 minutos</p>
-                <p>Porcentaje de aprobación: 70%</p>
-
-                <a href="datos-estudiante.html">Presentar examen</a>
-            </article>
-
-            <article>
-                <h3>Examen de bases de datos</h3>
-
-                <p>Tiempo: 45 minutos</p>
-                <p>Porcentaje de aprobación: 60%</p>
-
-                <a href="datos-estudiante.html">Presentar examen</a>
-            </article>
-
-        </section>
+        <p><a href="index.html">Acceso para administrativos y docentes</a></p>
 
     </main>
 
+    <script type="module" src="../js/resolver-examenes.js"></script>
 </body>
 </html>

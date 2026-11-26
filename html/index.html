@@ -1,25 +1,39 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login Acme School</title>
+    <title>Iniciar sesión - Acme School</title>
+    <link rel="stylesheet" href="../css/styles.css">
 </head>
-<body>
-    <form action="/iniciar-sesión" method="post">
-    <h1>Iniciar Sesión</h1>
-        <div class="login">
+<body class="pagina-login">
 
-        <label for="correo">Ingrese Su Correo</label><br>
-        <input type="email" name="email" placeholder="ejemplo@gmail.com"><br><br>
-        
-        <label for="password">Ingrese Su Contraseña</label><br>
-        <input type="password" placeholder="contraseña"><br>
-        <button type="submit">Iniciar sesión</button>
+    <main class="login">
 
-        </div>
+        <h1>Acme School</h1>
+        <h2>Iniciar sesión</h2>
 
-    </form>
+        <form id="formLogin" novalidate>
 
+            <label for="correo">Correo electrónico</label>
+            <input type="email" id="correo" name="correo" placeholder="ejemplo@gmail.com" autocomplete="username" required>
+
+            <label for="contrasena">Contraseña</label>
+            <input type="password" id="contrasena" name="contrasena" placeholder="Contraseña" autocomplete="current-password" required>
+
+            <p id="mensaje" class="mensaje" role="alert"></p>
+
+            <button type="submit">Iniciar sesión</button>
+
+        </form>
+
+        <p class="ayuda-login">
+            ¿Vas a presentar un examen?
+            <a href="resolver-examenes.html">Ver exámenes disponibles</a>
+        </p>
+
+    </main>
+
+    <script type="module" src="../js/index.js"></script>
 </body>
 </html>
