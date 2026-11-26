@@ -3,19 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login</title>
+    <title>Login Acme School</title>
 </head>
 <body>
     <form action="/iniciar-sesión" method="post">
     <h1>Iniciar Sesión</h1>
         <div class="login">
-        <h2>Ingrese Su Usuario</h2>
-            <input type="email" placeholder="ejemplo@gmail.com"><br><br>
-        <h2>Ingrese Su Usurio</h2>
-            <input type="password" placeholder="contraseña"><br><br>
+
+        <label for="correo">Ingrese Su Correo</label><br>
+        <input type="email" name="email" placeholder="ejemplo@gmail.com"><br><br>
+        
+        <label for="password">Ingrese Su Contraseña</label><br>
+        <input type="password" placeholder="contraseña"><br>
+
         <button type="submit">Iniciar sesión</button>
+
         </div>
+
     </form>
-</div>
+
 </body>
 </html>
